@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexor | Design and code, one team</title>
+<meta name="description" content="Nexor is a two-person web design and development studio. We take websites from Figma mockup to live deployed site.">
+<meta property="og:title" content="Nexor | Design and code, one team">
+<meta property="og:description" content="Websites that work for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1F7; --ink:#152036; --muted:#55607A; --line:#CDD4E4;
+  --blue:#2B4BFF; --sun:#FFD84D; --card:#FFFFFF;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:var(--display);font-weight:700;font-size:26px;text-decoration:none;letter-spacing:-.02em}
+nav a{margin-left:20px;text-decoration:none;font-weight:500;font-size:15px}
+nav a:hover{color:var(--blue)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.03em}
+h1{font-size:clamp(44px,9vw,88px);font-weight:700}
+h2{font-size:clamp(30px,5vw,44px);font-weight:700;margin-bottom:12px}
+h3{font-size:22px;font-weight:500;letter-spacing:-.01em}
+
+/* Hero */
+.hero{display:grid;gap:40px;padding:36px 0 84px;align-items:center}
+@media(min-width:860px){.hero{grid-template-columns:1.15fr 1fr;padding-top:64px}}
+.hero p.sub{font-size:20px;color:var(--muted);margin:22px 0 30px;max-width:30ch}
+.btn{display:inline-block;background:var(--blue);color:#fff;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn:hover{background:#1F38D6}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:8px}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+
+/* The one memorable thing: same button, shown as design and as code */
+.split{display:grid;grid-template-columns:1fr 1fr;border-radius:18px;overflow:hidden;border:2px solid var(--ink);background:var(--card);box-shadow:8px 8px 0 var(--ink);animation:rise .8s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.split>div{padding:22px 16px;min-height:270px;position:relative}
+.split .tag{font-size:13px;font-weight:600;color:var(--muted);margin-bottom:16px;display:block}
+.design{border-right:2px dashed var(--line);background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:14px 14px}
+.frame{position:relative;border:1.5px solid var(--blue);padding:16px 12px;margin-top:6px}
+.frame::before,.frame::after{content:"";position:absolute;width:9px;height:9px;background:#fff;border:1.5px solid var(--blue)}
+.frame::before{top:-5px;left:-5px}.frame::after{bottom:-5px;right:-5px}
+.mock{background:var(--blue);color:#fff;border-radius:10px;padding:12px;text-align:center;font-weight:600;font-size:15px}
+.mock-title{font-family:var(--display);font-size:20px;margin-bottom:10px;font-weight:700}
+.code{background:var(--ink);color:#C9D4FF;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;line-height:1.7}
+.code .tag{color:#8A97C4}
+.code b{color:var(--sun);font-weight:500}
+.code i{color:#8FE3B4;font-style:normal}
+
+/* Sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+.lede{color:var(--muted);max-width:52ch;margin-bottom:34px}
+.work{display:grid;gap:22px}
+@media(min-width:760px){.work{grid-template-columns:1fr 1fr}}
+.proj{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.proj .place{font-size:14px;color:var(--muted)}
+.proj ul{padding-left:18px;color:var(--muted);font-size:15.5px}
+.proj a.view{margin-top:auto;font-weight:600;color:var(--blue)}
+.services{display:grid;gap:26px}
+@media(min-width:760px){.services{grid-template-columns:repeat(3,1fr)}}
+.services p{color:var(--muted);font-size:16px;margin-top:8px}
+.services div{border-left:4px solid var(--sun);padding-left:16px}
+ol.steps{list-style:none;padding:0;display:grid;gap:14px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+ol.steps li::before{content:counter(s);font-family:var(--display);font-weight:700;background:var(--ink);color:#fff;width:36px;height:36px;border-radius:50%;display:grid;place-items:center}
+ol.steps strong{display:block}
+ol.steps span{color:var(--muted);font-size:15.5px}
+.contact{background:var(--ink);color:#fff;border-radius:22px;padding:44px 26px;margin:20px 0 60px;border:0}
+.contact h2{color:#fff}.contact p{color:#B9C3DE;margin-bottom:24px;max-width:46ch}
+.contact .btn{background:var(--sun);color:var(--ink)}
+.contact .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.contact .btn.ghost:hover{background:#fff;color:var(--ink)}
+footer{padding:0 0 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#">Nexor</a>
+    <nav><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Design and code, one team.</h1>
+        <p class="sub">Websites that work for you.</p>
+        <a class="btn" href="#contact">Start a project</a><a class="btn ghost" href="#work">See our work</a>
+      </div>
+      <div class="split" aria-label="The same button shown as a design and as code">
+        <div class="design">
+          <span class="tag">Design</span>
+          <div class="frame">
+            <div class="mock-title">Order now</div>
+            <div class="mock">Send on WhatsApp</div>
+          </div>
+        </div>
+        <div class="code">
+          <span class="tag">Code</span>
+&lt;<b>a</b> <i>class</i>="btn"<br>
+&nbsp;&nbsp;<i>href</i>="wa.me/…"&gt;<br>
+&nbsp;&nbsp;Send on WhatsApp<br>
+&lt;/<b>a</b>&gt;
+        </div>
+      </div>
+    </div>
+
+    <section id="work">
+      <h2>Recent work</h2>
+      <p class="lede">Two restaurant websites, designed and built by us and live today.</p>
+      <div class="work">
+        <article class="proj">
+          <h3>Firangii</h3>
+          <span class="place">Vegetarian restaurant, Kanpur</span>
+          <ul>
+            <li>Customers pick dishes and send the order straight to the restaurant on WhatsApp, so there is no delivery-app commission.</li>
+            <li>Mobile-first menu and order form.</li>
+            <li>Search-ready page titles and descriptions.</li>
+          </ul>
+          <a class="view" href="https://firangii.netlify.app" target="_blank" rel="noopener">Visit firangii.netlify.app</a>
+        </article>
+        <article class="proj">
+          <h3>The Silver Spoon</h3>
+          <span class="place">Restaurant and banquet, Sanai Lehari</span>
+          <ul>
+            <li>Website for a restaurant and banquet venue.</li>
+            <li>Built to look good and load fast on phones.</li>
+            <!-- ADD 1-2 REAL DETAILS about what you built here -->
+          </ul>
+          <a class="view" href="https://thesilverspoon.vercel.app" target="_blank" rel="noopener">Visit thesilverspoon.vercel.app</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>What we do</h2>
+      <p class="lede">One team handles the design and the build, so nothing gets lost between mockup and launch.</p>
+      <div class="services">
+        <div><h3>Web design</h3><p>Layouts and visual style that fit your brand and read well on a phone.</p></div>
+        <div><h3>UI/UX design</h3><p>Clear flows and screens, delivered as Figma files you can edit.</p></div>
+        <div><h3>Web development</h3><p>Fast, responsive sites, deployed live, with the code handed to you.</p></div>
+      </div>
+    </section>
+
+    <section id="process">
+      <h2>How a project runs</h2>
+      <p class="lede">Simple and in the open, so you always know what happens next.</p>
+      <ol class="steps">
+        <li><div><strong>Brief</strong><span>We talk through your goals, your customers and what the site must do.</span></div></li>
+        <li><div><strong>Design</strong><span>Mockups in Figma. You review and we revise.</span></div></li>
+        <li><div><strong>Build</strong><span>We code the approved design and test it on real phones.</span></div></li>
+        <li><div><strong>Launch</strong><span>We deploy the site and hand over the code and files.</span></div></li>
+      </ol>
+    </section>
+
+    <section class="contact wrap" id="contact" style="max-width:none">
+      <h2>Have a project in mind?</h2>
+      <p>Tell us what you need. We reply with questions and a clear quote.</p>
+      <a class="btn" href="mailto:nexordevstudio@gmail.com">Email us</a><a class="btn ghost" href="https://cal.id/nexor" target="_blank" rel="noopener">Book a 15-minute call</a>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Nexor</span><span>India</span></footer>
+</div>
+</body>
+</html>
