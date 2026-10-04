@@ -12,7 +12,7 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-.logo{font-family:var(--display);font-weight:700;font-size:26px;text-decoration:none;letter-spacing:-.02em}
+.logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:26px;text-decoration:none;letter-spacing:-.02em}
 nav a{margin-left:20px;text-decoration:none;font-weight:500;font-size:15px}
 nav a:hover{color:var(--blue)}
 h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.03em}

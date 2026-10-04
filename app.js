@@ -35,5 +35,5 @@ document.querySelectorAll('.proj').forEach(function(c){
 var f=document.getElementById('enq');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 var body='Name: '+d.get('n')+'\nEmail: '+d.get('e')+'\nNeed: '+d.get('t')+'\nBudget: '+d.get('b')+'\n\n'+d.get('m');
-location.href='mailto:nexordevstudio@gmail.com?subject='+encodeURIComponent('Project enquiry from '+d.get('n'))+'&body='+encodeURIComponent(body);});
+location.href='mailto:hello.sorvik@gmail.com?subject='+encodeURIComponent('Project enquiry from '+d.get('n'))+'&body='+encodeURIComponent(body);});
 })();
